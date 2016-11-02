@@ -39,4 +39,10 @@ figure {
 	margin: 1em 0; /* Extra wide images within figure tags don't overflow the content area. */
 }
 
+ul,
+ol {
+	margin: 0;
+	padding: 0;
+}
+
 @import "tables";

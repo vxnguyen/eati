@@ -64,6 +64,9 @@ function eati_setup() {
 		'default-color' => 'ffffff',
 		'default-image' => '',
 	) ) );
+
+	// Enable support for custom logo.
+	add_theme_support( 'custom-logo' );
 }
 endif;
 add_action( 'after_setup_theme', 'eati_setup' );
@@ -99,12 +102,25 @@ function eati_widgets_init() {
 add_action( 'widgets_init', 'eati_widgets_init' );
 
 /**
+ * Enable svg for media uploader.
+ */
+function cc_mime_types( $mimes ){
+	$mimes['svg'] = 'image/svg+xml';
+	return $mimes;
+}
+add_filter( 'upload_mimes', 'cc_mime_types' );
+
+/**
  * Enqueue scripts and styles.
  */
 function eati_scripts() {
 	wp_enqueue_style( 'eati-style', get_stylesheet_uri() );
 
 	wp_enqueue_script( 'eati-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
+
+	wp_enqueue_script( 'eati-modernizr-svg', get_template_directory_uri() . '/js/modernizr-svg.js', array(), '20161101', true );
+
+	wp_enqueue_script( 'eati-nav-shrink', get_template_directory_uri() . '/js/nav-shrink.js', array( 'jquery' ), '20161101', true );
 
 	wp_enqueue_script( 'eati-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
 
