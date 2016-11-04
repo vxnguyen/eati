@@ -1,0 +1,76 @@
+.about {
+	padding-top: 100px;
+	padding-bottom: 100px;
+	display: flex;
+	margin-right: -20px;
+
+	> div {
+		width: 25%;
+		margin-right: 20px;
+
+		> img {
+			box-shadow: 0 3px 6px rgba(0,0,0,0.16),0 3px 6px rgba(0,0,0,0.23);
+		}
+
+		h2 {
+			position: relative;
+			@include font-size(3.8);
+		}
+	}
+
+	.brush-bg:after {
+		content: "";
+		background: url("images/eati-brush_2x.png") no-repeat;
+		background-size: contain;
+		position: absolute;
+	    left: -11px;
+	    top: -21px;
+	    width: 270px;
+	    height: 98px;
+	    z-index: -100;
+	}
+
+	// Responsive Styles for About content
+	@media screen and (max-width: 1140px) {
+		flex-wrap: wrap;
+		justify-content: center;
+
+		> div:first-child {
+			width: 100%;
+			text-align: center;
+			padding-bottom: 40px;
+
+			h2 {
+				display: inline-block;
+			}
+
+			p {
+				max-width: 650px;
+				margin: {
+					left: auto;
+					right: auto;
+				}
+			}
+		}
+
+		.brush-bg:after {
+			left: -33px;
+		}
+	}
+
+	@media screen and (max-width: 650px) {
+		> div {
+			width: 29%;
+		}
+	}
+
+	@media screen and (max-width: 500px) {
+		> div:nth-child(2) {
+			display: none;
+		}
+
+		> div {
+			width: 43%;
+		}
+	}
+}

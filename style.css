@@ -224,24 +224,6 @@ textarea {
   font-size: 100%;
   line-height: 1.5; }
 
-body,
-caption,
-th,
-td,
-input,
-textarea,
-select,
-option,
-legend,
-fieldset,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-size-adjust: 0.5; }
-
 p,
 h1,
 h2,
@@ -252,7 +234,17 @@ h6 {
   margin: 0; }
 
 h1, h2, h3, h4, h5, h6 {
-  clear: both; }
+  clear: both;
+  font-family: "Josefin Slab", serif;
+  font-weight: 300; }
+
+h1 {
+  font-size: 51.2px;
+  font-size: 3.2rem; }
+
+h2 {
+  font-size: 44.8px;
+  font-size: 2.8rem; }
 
 p {
   margin-bottom: 1.5em; }
@@ -363,8 +355,10 @@ table {
 # Layout
 --------------------------------------------------------------*/
 .inner {
-  max-width: 1140px;
-  margin: 0 auto; }
+  max-width: 1160px;
+  margin: 0 auto;
+  padding-left: 20px;
+  padding-right: 20px; }
 
 /*--------------------------------------------------------------
 # Navigation
@@ -383,6 +377,21 @@ a {
   a:hover, a:active {
     outline: 0; }
 
+.link-button {
+  text-decoration: none;
+  font-family: "Josefin Slab", serif;
+  background-color: #292929;
+  color: #FFFFFF;
+  padding: 8px 10px 5px 10px;
+  font-size: 19.2px;
+  font-size: 1.2rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); }
+  .link-button:visited {
+    color: #FFFFFF; }
+  .link-button:hover {
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22); }
+
 /*--------------------------------------------------------------
 ## Menus
 --------------------------------------------------------------*/
@@ -391,7 +400,6 @@ a {
   top: 50%;
   right: 0;
   transform: translateY(-50%);
-  margin-right: -20px;
   font-family: "chaparral-pro", sans-serif;
   font-size: 22.4px;
   font-size: 1.4rem;
@@ -420,7 +428,7 @@ a {
 /*** Donate Button ***/
 .nav-donate {
   background-color: #292929;
-  padding: 5px 10px; }
+  padding: 9px 10px 5px 10px; }
   .nav-donate a {
     color: #FFFFFF;
     font-family: "Josefin Slab", serif; }
@@ -596,21 +604,66 @@ a {
     left: 0;
     right: 0; }
   .hero .content h1 {
-    font-family: "freight-display-pro", sans-serif;
-    font-weight: 300;
-    font-size: 51.2px;
-    font-size: 3.2rem; }
+    font-family: "freight-display-pro", sans-serif; }
   .hero .content p {
     font-size: 20.8px;
     font-size: 1.3rem; }
   .hero .content-home {
     text-align: center;
-    width: 600px;
+    max-width: 600px;
     margin: 0 auto;
     padding-top: 80px; }
 
 /*--------------------------------------------------------------
 ## Front Page
 --------------------------------------------------------------*/
+.about {
+  padding-top: 100px;
+  padding-bottom: 100px;
+  display: flex;
+  margin-right: -20px; }
+  .about > div {
+    width: 25%;
+    margin-right: 20px; }
+    .about > div > img {
+      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23); }
+    .about > div h2 {
+      position: relative;
+      font-size: 60.8px;
+      font-size: 3.8rem; }
+  .about .brush-bg:after {
+    content: "";
+    background: url("images/eati-brush_2x.png") no-repeat;
+    background-size: contain;
+    position: absolute;
+    left: -11px;
+    top: -21px;
+    width: 270px;
+    height: 98px;
+    z-index: -100; }
+  @media screen and (max-width: 1140px) {
+    .about {
+      flex-wrap: wrap;
+      justify-content: center; }
+      .about > div:first-child {
+        width: 100%;
+        text-align: center;
+        padding-bottom: 40px; }
+        .about > div:first-child h2 {
+          display: inline-block; }
+        .about > div:first-child p {
+          max-width: 650px;
+          margin-left: auto;
+          margin-right: auto; }
+      .about .brush-bg:after {
+        left: -33px; } }
+  @media screen and (max-width: 650px) {
+    .about > div {
+      width: 29%; } }
+  @media screen and (max-width: 500px) {
+    .about > div:nth-child(2) {
+      display: none; }
+    .about > div {
+      width: 43%; } }
 
 /*# sourceMappingURL=style.css.map */

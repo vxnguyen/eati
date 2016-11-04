@@ -13,14 +13,17 @@ get_header(); ?>
 				get_template_part( 'template-parts/content', 'hero' ); ?>
 			<?php endwhile; ?>
 
-			<section class="about">
-				<div>
-					<h2>EATI</h2>
-					<p><?php the_field('about'); ?></p>
+			<section class="inner">
+				<div class="about">
+					<div>
+						<h2 class="brush-bg">EATI</h2>
+						<p><?php the_field('about'); ?></p>
+						<a href="" class="link-button">LEARN MORE</a>
+					</div>	
+					<div><?php echo wp_get_attachment_image( get_field('about-image-1'), 'full'); ?></div>
+					<div><?php echo wp_get_attachment_image( get_field('about-image-2'), 'full'); ?></div>
+					<div><?php echo wp_get_attachment_image( get_field('about-image-3'), 'full'); ?></div>					
 				</div>
-				<div><?php echo wp_get_attachment_image( get_field('about-image1'), 'full') ); ?></div>
-				<div><?php echo wp_get_attachment_image( get_field('about-image2'), 'full') ); ?></div>
-				<div><?php echo wp_get_attachment_image( get_field('about-image3'), 'full') ); ?></div>
 			</section>
 		</main><!-- #main -->
 	</div><!-- #primary -->

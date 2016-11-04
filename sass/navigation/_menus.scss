@@ -3,7 +3,6 @@
 	top: 50%;
 	right: 0;
 	transform: translateY(-50%);
-	margin-right: -20px;
 	font-family: $font__nav;
 	@include font-size(1.4);
 	// Transition for shrinking navigation on scroll
@@ -39,7 +38,7 @@
 /*** Donate Button ***/
 .nav-donate {
 	background-color: $color__bg-donate-button;
-	padding: 5px 10px;
+	padding: 9px 10px 5px 10px;
  	
  	a {
  		color: $color__text-donate-button;

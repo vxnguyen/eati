@@ -19,8 +19,6 @@
 
 	.content h1 {
 		font-family: $font__site-title;
-		font-weight: 300;
-		@include font-size(3.2);
 	}
 
 	.content p {
@@ -30,7 +28,7 @@
 	// Front page specific styles
 	.content-home {
 		text-align: center;
-		width: 600px;
+		max-width: 600px;
 		margin: 0 auto;
 		padding-top: 80px;
 	}
