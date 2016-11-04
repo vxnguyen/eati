@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Josefin+Slab');
+
 body,
 button,
 input,
@@ -26,6 +28,16 @@ h4,
 h5,
 h6 {
  	 font-size-adjust: 0.5;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	margin: 0;
 }
 
 @import "headings";

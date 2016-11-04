@@ -118,7 +118,7 @@ function eati_scripts() {
 
 	wp_enqueue_script( 'eati-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
 
-	wp_enqueue_script( 'eati-modernizr-svg', get_template_directory_uri() . '/js/modernizr-svg.js', array(), '20161101', true );
+	wp_enqueue_script( 'eati-modernizr', get_template_directory_uri() . '/js/modernizr.js', array(), '20161101', true );
 
 	wp_enqueue_script( 'eati-nav-shrink', get_template_directory_uri() . '/js/nav-shrink.js', array( 'jquery' ), '20161101', true );
 

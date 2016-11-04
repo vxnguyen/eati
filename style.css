@@ -32,10 +32,13 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 # Accessibility
 # Content
 	## Masthead
+	## Hero
+	## Front Page
 --------------------------------------------------------------*/
 /*--------------------------------------------------------------
 # Normalize
 --------------------------------------------------------------*/
+@import url("https://fonts.googleapis.com/css?family=Josefin+Slab");
 html {
   font-family: sans-serif;
   -webkit-text-size-adjust: 100%;
@@ -216,8 +219,8 @@ button,
 input,
 select,
 textarea {
-  color: #404040;
-  font-family: sans-serif;
+  color: #292929;
+  font-family: "freight-sans-pro", sans-serif;
   font-size: 100%;
   line-height: 1.5; }
 
@@ -238,6 +241,15 @@ h4,
 h5,
 h6 {
   font-size-adjust: 0.5; }
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0; }
 
 h1, h2, h3, h4, h5, h6 {
   clear: both; }
@@ -410,7 +422,8 @@ a {
   background-color: #292929;
   padding: 5px 10px; }
   .nav-donate a {
-    color: #FFFFFF; }
+    color: #FFFFFF;
+    font-family: "Josefin Slab", serif; }
 
 /*** Mobile Menu.\ ***/
 .menu-toggle,
@@ -532,13 +545,14 @@ a {
 # Content
 --------------------------------------------------------------*/
 /*--------------------------------------------------------------
-## Branding
+## Masthead
 --------------------------------------------------------------*/
 #masthead {
   position: fixed;
   top: 0;
   width: 100%;
-  background-color: rgba(234, 234, 234, 0.9); }
+  background-color: rgba(234, 234, 234, 0.9);
+  z-index: 20; }
   #masthead .inner {
     padding-top: 20px;
     padding-bottom: 20px;
@@ -563,5 +577,40 @@ a {
 .nav-shrink .main-navigation {
   padding: 7px 0;
   transition: padding .5s; }
+
+/*--------------------------------------------------------------
+## Hero
+--------------------------------------------------------------*/
+.hero {
+  height: 600px;
+  position: relative; }
+  .hero > img {
+    object-fit: cover;
+    height: 100%; }
+  .hero .inner {
+    padding-top: 90px;
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    top: 0;
+    left: 0;
+    right: 0; }
+  .hero .content h1 {
+    font-family: "freight-display-pro", sans-serif;
+    font-weight: 300;
+    font-size: 51.2px;
+    font-size: 3.2rem; }
+  .hero .content p {
+    font-size: 20.8px;
+    font-size: 1.3rem; }
+  .hero .content-home {
+    text-align: center;
+    width: 600px;
+    margin: 0 auto;
+    padding-top: 80px; }
+
+/*--------------------------------------------------------------
+## Front Page
+--------------------------------------------------------------*/
 
 /*# sourceMappingURL=style.css.map */
