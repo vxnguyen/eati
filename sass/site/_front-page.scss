@@ -13,24 +13,20 @@
 		}
 
 		h2 {
-			position: relative;
 			@include font-size(3.8);
+			margin-bottom: 20px;
 		}
 	}
 
 	.brush-bg:after {
-		content: "";
+		position: absolute;
 		background: url("images/eati-brush_2x.png") no-repeat;
 		background-size: contain;
-		position: absolute;
 	    left: -11px;
 	    top: -21px;
 	    width: 270px;
-	    height: 98px;
-	    z-index: -100;
 	}
 
-	// Responsive Styles for About content
 	@media screen and (max-width: 1140px) {
 		flex-wrap: wrap;
 		justify-content: center;
@@ -71,6 +67,138 @@
 
 		> div {
 			width: 43%;
+		}
+	}
+}
+
+.donate-message-banner {
+	position: relative;
+	height: 440px;
+
+	> img {
+		object-fit: cover;
+		height: 100%;
+	}
+
+	.inner {
+		padding: {
+			top: 60px;
+			bottom: 60px;
+		}
+		position: absolute;
+		margin-left: auto;
+		margin-right: auto;
+		top: 0;
+		left: 0;
+		right: 0;
+		height: 100%;
+	}
+
+	p {
+		font-family: $font__display;
+		color: $color__text-donate-message;
+		@include font-size(1.5);
+	}
+
+	.bottom-line {
+		position: absolute;
+		bottom: 20px;
+		right: 20px;
+		padding-left: 20px;
+		text-align: right;
+	}
+}
+
+.sponsor-message {
+	padding: {
+		top: 100px;
+		bottom: 100px;
+	}
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+
+	> div {
+		width: 47%;
+
+		> img {
+			box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+		}
+	}
+
+	.our-sponsors {
+		margin-top: 40px;
+	}
+
+	.sponsor-logos {
+		display: flex;
+		align-items: center;
+
+		> div {
+			margin: {
+				right: 30px;
+				top: 10px;
+			}
+		}
+	}
+
+	.brush-bg {
+		margin-bottom: 20px;
+	}
+
+	.brush-bg:after {
+		background: url("images/sponsor-message-brush_2x.png") no-repeat;
+		background-size: contain;
+	    left: -3px;
+	    top: 8px;
+	    width: 500px;
+	}
+
+	.vital-strategies-logo {
+		width: 170px;
+	}
+
+	.swiss-lung-logo {
+		width: 80px;
+	}
+
+	@media screen and (max-width: 950px) {
+		> div:first-child {
+			display: none;
+		}
+
+		> div {
+			width: 100%;
+			text-align: center;
+		}
+
+		.sponsor-logos {
+			justify-content: center;
+		}
+
+		.brush-bg {
+			max-width: 500px;
+			margin: {
+				left: auto;
+				right: auto;
+			}
+		}
+
+		.brush-bg:after {
+			top: 0;
+			left: 60px;
+			width: 400px;
+		}
+	}
+
+	@media screen and (max-width: 700px) {
+		.brush-bg {
+			max-width: 300px;
+		}
+
+		.brush-bg:after {
+			width: 300px;
+			left: 0;
 		}
 	}
 }

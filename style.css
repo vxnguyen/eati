@@ -30,10 +30,12 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 	## Links
 	## Menus
 # Accessibility
+# Animations
 # Content
 	## Masthead
 	## Hero
 	## Front Page
+	## Footer
 --------------------------------------------------------------*/
 /*--------------------------------------------------------------
 # Normalize
@@ -239,16 +241,78 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 300; }
 
 h1 {
-  font-size: 51.2px;
-  font-size: 3.2rem; }
+  font-size: 32px;
+  font-size: 2rem;
+  /* 2x body copy size = 32px */
+  line-height: 1.25;
+  /* 45px / 36px */ }
 
+@media (min-width: 43.75em) {
+  h1 {
+    font-size: 40px;
+    font-size: 2.5rem;
+    /* 2.5x body copy size = 40px */
+    line-height: 1.125; } }
+@media (min-width: 56.25em) {
+  h1 {
+    font-size: 48px;
+    font-size: 3rem;
+    /* 3x body copy size = 48px */
+    line-height: 1.05;
+    /* keep to a multiple of the 20px line height and something more appropriate for display headings */ } }
 h2 {
-  font-size: 44.8px;
-  font-size: 2.8rem; }
+  font-size: 26px;
+  font-size: 1.625rem;
+  /* 1.625x body copy size = 26px */
+  line-height: 1.15384615;
+  /* 30px / 26px */ }
 
+@media (min-width: 43.75em) {
+  h2 {
+    font-size: 32px;
+    font-size: 2rem;
+    /* 2x body copy size = 32px */
+    line-height: 1.25; } }
+@media (min-width: 56.25em) {
+  h2 {
+    font-size: 36px;
+    font-size: 2.25rem;
+    /* 2.25x body copy size = 36px */
+    line-height: 1.25; } }
+h3 {
+  font-size: 22px;
+  font-size: 1.375rem;
+  /* 1.375x body copy size = 22px */
+  line-height: 1.13636364;
+  /* 25px / 22px */ }
+
+@media (min-width: 43.75em) {
+  h3 {
+    font-size: 24px;
+    font-size: 1.5rem;
+    /* 1.5x body copy size = 24px */
+    line-height: 1.25; } }
+@media (min-width: 56.25em) {
+  h3 {
+    font-size: 28px;
+    font-size: 1.75rem;
+    /* 1.75x body copy size = 28px */
+    line-height: 1.25; } }
 p {
-  margin-bottom: 1.5em; }
+  margin-bottom: 1.5em;
+  font-size: 17.6px;
+  font-size: 1.1rem;
+  /* equivalent to 16px */
+  line-height: 1.25;
+  /* equivalent to 20px */ }
 
+@media (min-width: 43.75em) {
+  p {
+    font-size: 17.6px;
+    font-size: 1.1rem;
+    /* equivalent to 16px */
+    line-height: 1.375;
+    /* equivalent to 22px */ } }
 dfn, cite, em, i {
   font-style: italic; }
 
@@ -346,6 +410,43 @@ ul,
 ol {
   margin: 0;
   padding: 0; }
+
+.brush-bg {
+  position: relative; }
+
+.brush-bg:after {
+  content: "";
+  position: absolute;
+  z-index: -20;
+  height: 100px; }
+
+.animated {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both; }
+
+@-webkit-keyframes fadeInUp {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0); }
+  to {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none; } }
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0); }
+  to {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none; } }
+.fadeInUp {
+  -webkit-animation-name: fadeInUp;
+  animation-name: fadeInUp; }
 
 table {
   margin: 0 0 1.5em;
@@ -461,6 +562,43 @@ a {
   text-align: right;
   width: 50%; }
 
+/*--------------------------------------------------------------
+# Accessibility
+--------------------------------------------------------------*/
+/* Text meant only for screen readers. */
+.screen-reader-text {
+  clip: rect(1px, 1px, 1px, 1px);
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden; }
+  .screen-reader-text:focus {
+    background-color: #f1f1f1;
+    border-radius: 3px;
+    box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+    clip: auto !important;
+    color: #21759b;
+    display: block;
+    font-size: 14px;
+    font-size: 0.875rem;
+    font-weight: bold;
+    height: auto;
+    left: 5px;
+    line-height: normal;
+    padding: 15px 23px 14px;
+    text-decoration: none;
+    top: 5px;
+    width: auto;
+    z-index: 100000;
+    /* Above WP toolbar. */ }
+
+/* Do not show the outline on the skip link target. */
+#content[tabindex="-1"]:focus {
+  outline: 0; }
+
+/*--------------------------------------------------------------
+# Animations
+--------------------------------------------------------------*/
 /* Underline from left animation */
 .hvr-underline-from-left {
   display: inline-block;
@@ -515,39 +653,40 @@ a {
   -webkit-animation-name: pulse;
   animation-name: pulse; }
 
-/*--------------------------------------------------------------
-# Accessibility
---------------------------------------------------------------*/
-/* Text meant only for screen readers. */
-.screen-reader-text {
-  clip: rect(1px, 1px, 1px, 1px);
-  position: absolute !important;
-  height: 1px;
-  width: 1px;
-  overflow: hidden; }
-  .screen-reader-text:focus {
-    background-color: #f1f1f1;
-    border-radius: 3px;
-    box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
-    clip: auto !important;
-    color: #21759b;
-    display: block;
-    font-size: 14px;
-    font-size: 0.875rem;
-    font-weight: bold;
-    height: auto;
-    left: 5px;
-    line-height: normal;
-    padding: 15px 23px 14px;
-    text-decoration: none;
-    top: 5px;
-    width: auto;
-    z-index: 100000;
-    /* Above WP toolbar. */ }
+@-webkit-keyframes fadeInUp {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0); }
+  to {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none; } }
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0); }
+  to {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none; } }
+.fadeInUp {
+  display: block;
+  -webkit-animation-name: fadeInUp;
+  animation-name: fadeInUp; }
 
-/* Do not show the outline on the skip link target. */
-#content[tabindex="-1"]:focus {
-  outline: 0; }
+@-webkit-keyframes fadeInUpBig {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 2000px, 0);
+    transform: translate3d(0, 2000px, 0); }
+  to {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none; } }
+.hidden {
+  display: none; }
 
 /*--------------------------------------------------------------
 # Content
@@ -590,7 +729,7 @@ a {
 ## Hero
 --------------------------------------------------------------*/
 .hero {
-  height: 600px;
+  height: 700px;
   position: relative; }
   .hero > img {
     object-fit: cover;
@@ -628,19 +767,16 @@ a {
     .about > div > img {
       box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23); }
     .about > div h2 {
-      position: relative;
       font-size: 60.8px;
-      font-size: 3.8rem; }
+      font-size: 3.8rem;
+      margin-bottom: 20px; }
   .about .brush-bg:after {
-    content: "";
+    position: absolute;
     background: url("images/eati-brush_2x.png") no-repeat;
     background-size: contain;
-    position: absolute;
     left: -11px;
     top: -21px;
-    width: 270px;
-    height: 98px;
-    z-index: -100; }
+    width: 270px; }
   @media screen and (max-width: 1140px) {
     .about {
       flex-wrap: wrap;
@@ -665,5 +801,281 @@ a {
       display: none; }
     .about > div {
       width: 43%; } }
+
+.donate-message-banner {
+  position: relative;
+  height: 440px; }
+  .donate-message-banner > img {
+    object-fit: cover;
+    height: 100%; }
+  .donate-message-banner .inner {
+    padding-top: 60px;
+    padding-bottom: 60px;
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100%; }
+  .donate-message-banner p {
+    font-family: "freight-display-pro", sans-serif;
+    color: #FFFFFF;
+    font-size: 24px;
+    font-size: 1.5rem; }
+  .donate-message-banner .bottom-line {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    padding-left: 20px;
+    text-align: right; }
+
+.sponsor-message {
+  padding-top: 100px;
+  padding-bottom: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center; }
+  .sponsor-message > div {
+    width: 47%; }
+    .sponsor-message > div > img {
+      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23); }
+  .sponsor-message .our-sponsors {
+    margin-top: 40px; }
+  .sponsor-message .sponsor-logos {
+    display: flex;
+    align-items: center; }
+    .sponsor-message .sponsor-logos > div {
+      margin-right: 30px;
+      margin-top: 10px; }
+  .sponsor-message .brush-bg {
+    margin-bottom: 20px; }
+  .sponsor-message .brush-bg:after {
+    background: url("images/sponsor-message-brush_2x.png") no-repeat;
+    background-size: contain;
+    left: -3px;
+    top: 8px;
+    width: 500px; }
+  .sponsor-message .vital-strategies-logo {
+    width: 170px; }
+  .sponsor-message .swiss-lung-logo {
+    width: 80px; }
+  @media screen and (max-width: 950px) {
+    .sponsor-message > div:first-child {
+      display: none; }
+    .sponsor-message > div {
+      width: 100%;
+      text-align: center; }
+    .sponsor-message .sponsor-logos {
+      justify-content: center; }
+    .sponsor-message .brush-bg {
+      max-width: 500px;
+      margin-left: auto;
+      margin-right: auto; }
+    .sponsor-message .brush-bg:after {
+      top: 0;
+      left: 60px;
+      width: 400px; } }
+  @media screen and (max-width: 700px) {
+    .sponsor-message .brush-bg {
+      max-width: 300px; }
+    .sponsor-message .brush-bg:after {
+      width: 300px;
+      left: 0; } }
+
+/*--------------------------------------------------------------
+## Footer
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
+## Masthead
+--------------------------------------------------------------*/
+#masthead {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: rgba(234, 234, 234, 0.9);
+  z-index: 20; }
+  #masthead .inner {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    position: relative;
+    transition: padding .5s; }
+
+.site-branding {
+  display: inline-block; }
+
+.custom-logo {
+  width: 250px;
+  vertical-align: middle;
+  transition: width .5s; }
+
+.nav-shrink .inner {
+  padding-top: 10px !important;
+  padding-bottom: 10px !important;
+  transition: padding .5s; }
+.nav-shrink .custom-logo {
+  width: 180px;
+  transition: width .5s; }
+.nav-shrink .main-navigation {
+  padding: 7px 0;
+  transition: padding .5s; }
+
+/*--------------------------------------------------------------
+## Hero
+--------------------------------------------------------------*/
+.hero {
+  height: 700px;
+  position: relative; }
+  .hero > img {
+    object-fit: cover;
+    height: 100%; }
+  .hero .inner {
+    padding-top: 90px;
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    top: 0;
+    left: 0;
+    right: 0; }
+  .hero .content h1 {
+    font-family: "freight-display-pro", sans-serif; }
+  .hero .content p {
+    font-size: 20.8px;
+    font-size: 1.3rem; }
+  .hero .content-home {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+    padding-top: 80px; }
+
+/*--------------------------------------------------------------
+## Front Page
+--------------------------------------------------------------*/
+.about {
+  padding-top: 100px;
+  padding-bottom: 100px;
+  display: flex;
+  margin-right: -20px; }
+  .about > div {
+    width: 25%;
+    margin-right: 20px; }
+    .about > div > img {
+      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23); }
+    .about > div h2 {
+      font-size: 60.8px;
+      font-size: 3.8rem;
+      margin-bottom: 20px; }
+  .about .brush-bg:after {
+    position: absolute;
+    background: url("images/eati-brush_2x.png") no-repeat;
+    background-size: contain;
+    left: -11px;
+    top: -21px;
+    width: 270px; }
+  @media screen and (max-width: 1140px) {
+    .about {
+      flex-wrap: wrap;
+      justify-content: center; }
+      .about > div:first-child {
+        width: 100%;
+        text-align: center;
+        padding-bottom: 40px; }
+        .about > div:first-child h2 {
+          display: inline-block; }
+        .about > div:first-child p {
+          max-width: 650px;
+          margin-left: auto;
+          margin-right: auto; }
+      .about .brush-bg:after {
+        left: -33px; } }
+  @media screen and (max-width: 650px) {
+    .about > div {
+      width: 29%; } }
+  @media screen and (max-width: 500px) {
+    .about > div:nth-child(2) {
+      display: none; }
+    .about > div {
+      width: 43%; } }
+
+.donate-message-banner {
+  position: relative;
+  height: 440px; }
+  .donate-message-banner > img {
+    object-fit: cover;
+    height: 100%; }
+  .donate-message-banner .inner {
+    padding-top: 60px;
+    padding-bottom: 60px;
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100%; }
+  .donate-message-banner p {
+    font-family: "freight-display-pro", sans-serif;
+    color: #FFFFFF;
+    font-size: 24px;
+    font-size: 1.5rem; }
+  .donate-message-banner .bottom-line {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    padding-left: 20px;
+    text-align: right; }
+
+.sponsor-message {
+  padding-top: 100px;
+  padding-bottom: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center; }
+  .sponsor-message > div {
+    width: 47%; }
+    .sponsor-message > div > img {
+      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23); }
+  .sponsor-message .our-sponsors {
+    margin-top: 40px; }
+  .sponsor-message .sponsor-logos {
+    display: flex;
+    align-items: center; }
+    .sponsor-message .sponsor-logos > div {
+      margin-right: 30px;
+      margin-top: 10px; }
+  .sponsor-message .brush-bg {
+    margin-bottom: 20px; }
+  .sponsor-message .brush-bg:after {
+    background: url("images/sponsor-message-brush_2x.png") no-repeat;
+    background-size: contain;
+    left: -3px;
+    top: 8px;
+    width: 500px; }
+  .sponsor-message .vital-strategies-logo {
+    width: 170px; }
+  .sponsor-message .swiss-lung-logo {
+    width: 80px; }
+  @media screen and (max-width: 950px) {
+    .sponsor-message > div:first-child {
+      display: none; }
+    .sponsor-message > div {
+      width: 100%;
+      text-align: center; }
+    .sponsor-message .sponsor-logos {
+      justify-content: center; }
+    .sponsor-message .brush-bg {
+      max-width: 500px;
+      margin-left: auto;
+      margin-right: auto; }
+    .sponsor-message .brush-bg:after {
+      top: 0;
+      left: 60px;
+      width: 400px; } }
+  @media screen and (max-width: 700px) {
+    .sponsor-message .brush-bg {
+      max-width: 300px; }
+    .sponsor-message .brush-bg:after {
+      width: 300px;
+      left: 0; } }
 
 /*# sourceMappingURL=style.css.map */

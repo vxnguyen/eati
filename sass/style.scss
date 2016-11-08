@@ -31,10 +31,12 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 	## Links
 	## Menus
 # Accessibility
+# Animations
 # Content
 	## Masthead
 	## Hero
 	## Front Page
+	## Footer
 --------------------------------------------------------------*/
 @import "variables-site/variables-site";
 @import "mixins/mixins-master";
@@ -68,6 +70,11 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 # Accessibility
 --------------------------------------------------------------*/
 @import "modules/accessibility";
+
+/*--------------------------------------------------------------
+# Animations
+--------------------------------------------------------------*/
+@import "animations/animations";
 
 /*--------------------------------------------------------------
 # Content
