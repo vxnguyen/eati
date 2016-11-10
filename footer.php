@@ -14,10 +14,16 @@
 	</div><!-- #content -->
 
 	<footer id="colophon" class="site-footer" role="contentinfo">
-		<div class="site-info">
-			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'eati' ) ); ?>"><?php printf( esc_html__( 'Proudly powered by %s', 'eati' ), 'WordPress' ); ?></a>
-			<span class="sep"> | </span>
-			<?php printf( esc_html__( 'Theme: %1$s by %2$s.', 'eati' ), 'eati', '<a href="http://vinhnguyen.me" rel="designer">Vinh Nguyen</a>' ); ?>
+		<div class="site-info inner">
+			<div class="site-info-left">
+				<p class="footer-logo">EATI</p>
+				<p>East African Training Initiative is a health program of Vital Strategies, a non-profit organization based in New York City. </p>
+			</div>
+			<div class="site-info-right">
+				<p>For more information on Vital Strategies, please visit vitalstrategies.org<br>
+					For specific questions regarding EATI, please contact <a href="mailto:info@eatiethiopia.org">info@eatiethiopia.org</a><br>
+					Website Designed by <a href="http://taradowdellgroup.com/">Tara Dowdell Group</a></p>
+			</div>
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
 </div><!-- #page -->

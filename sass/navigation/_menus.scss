@@ -1,7 +1,8 @@
-.main-navigation {
+.main-navigation,
+.mobile-navigation {
 	position: absolute;
 	top: 50%;
-	right: 0;
+	right: 20px;
 	transform: translateY(-50%);
 	font-family: $font__nav;
 	@include font-size(1.4);
@@ -10,8 +11,11 @@
 
 	li {
 		display: inline-block;
-		margin-right: 20px;
 		position: relative;
+	}
+
+	li:not(:last-child) {
+		margin-right: 20px;
 	}
 
 	a {
@@ -36,48 +40,127 @@
 }
 
 /*** Donate Button ***/
-.nav-donate {
+.nav-donate a,
+.mobile-donate-container a {
 	background-color: $color__bg-donate-button;
 	padding: 9px 10px 5px 10px;
- 	
- 	a {
- 		color: $color__text-donate-button;
- 		font-family: $font__heading;
- 	}
+ 	color: $color__text-donate-button;
+ 	font-family: $font__heading;
 }
 
 /*** Mobile Menu.\ ***/
-.menu-toggle,
-.main-navigation.toggled ul {
-	display: block;
+.mobile-donate-container .nav-donate,
+.menu-toggle-open {
+	display: none;
 }
 
-@media screen and (min-width: 37.5em) {
-	.menu-toggle {
+.mobile-navigation {
+	visibility: hidden;
+	position: fixed;
+	top: 0;
+	left: 0;
+	transform: none;
+	padding: 100px 20px 20px 20px;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(51,51,51,0.8);
+	z-index: 50;
+    transition: visibility 0s linear 300ms, opacity 300ms;
+    opacity: 0;
+
+	a {
+		color: $color__text-mobile-nav;
+	}
+
+	ul {
+		margin-top: 50px;
+	}
+
+	li {
+		display: block;
+		margin-right: 0!important;
+		margin-bottom: 10px;
+		text-align: right;
+		@include font-size(2);
+	}
+
+	/*** Mobile Menu Donate Button ***/
+	.nav-donate a {
+		background-color: $color__bg-donate-button-inverted;
+		padding: 9px 10px 5px 10px;
+	 	color: $color__text-donate-button-inverted;
+	 	font-family: $font__heading;
+	}
+
+	.menu-toggle-close {
+		float: right;
+		cursor: pointer;
+		border: none;
+		background-color: rgba(234,234,234,0);
+		position: relative;
+		width: 30px;
+		height: 30px;
+
+		> div {
+			background-color: #EEEEEE;
+			width: 24px;
+			height: 4px;
+			margin: 4px 0;
+		    position: absolute;
+		    top: 8px;
+		   	right: 3px;
+		}
+
+		// Mobile menu close icon
+		> div:first-child {
+			    transform: rotate(45deg);
+		}
+
+		> div:last-child {
+			    transform: rotate(-45deg);
+		}
+	}
+}
+
+// Toggle mobile menu visibility opacity animation
+.visible {
+	visibility: visible;
+    opacity: 1;
+    transition: opacity 0.5s;
+}
+
+
+@media screen and (max-width: 880px) {
+	.menu-toggle-open {
+		display: block;
+		cursor: pointer;
+		border: none;
+		background-color: rgba(234,234,234,0);
+
+		> div {
+			width: 24px;
+			height: 4px;
+			background-color: #292929;
+			margin: 4px 0;
+		}
+	}
+
+	.main-navigation ul {
 		display: none;
 	}
-	.main-navigation ul {
-		display: block;
+
+	.mobile-donate-container {
+	display: flex;
+
+		.nav-donate {
+			margin-right: 20px;
+			display: block;
+		}
 	}
 }
 
-.comment-navigation,
-.posts-navigation,
-.post-navigation {
-
-	.site-main & {
-		margin: 0 0 1.5em;
-		overflow: hidden;
-	}
-
-	.nav-previous {
-		float: left;
-		width: 50%;
-	}
-
-	.nav-next {
-		float: right;
-		text-align: right;
-		width: 50%;
+@media screen and (max-width: 500px) {
+	.mobile-donate-container .nav-donate {
+		display: none;
 	}
 }

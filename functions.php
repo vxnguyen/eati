@@ -45,6 +45,7 @@ function eati_setup() {
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
 		'primary' => esc_html__( 'Primary', 'eati' ),
+		'mobile' => esc_html__( 'Mobile', 'eati' )
 	) );
 
 	/*
@@ -116,7 +117,7 @@ add_filter( 'upload_mimes', 'cc_mime_types' );
 function eati_scripts() {
 	wp_enqueue_style( 'eati-style', get_stylesheet_uri() );
 
-	wp_enqueue_script( 'eati-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
+	wp_enqueue_script( 'eati-navigation', get_template_directory_uri() . '/js/navigation.js', array( 'jquery' ), '20161109', true );
 
 	wp_enqueue_script( 'eati-modernizr', get_template_directory_uri() . '/js/modernizr.js', array(), '20161101', true );
 

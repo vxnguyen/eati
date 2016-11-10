@@ -39,10 +39,18 @@
 				<?php the_custom_logo(); ?>
 			</div><!-- .site-branding -->
 
-			<nav id="site-navigation" class="main-navigation" role="navigation">
-				<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'eati' ); ?></button>
+			<nav class="main-navigation" role="navigation">
+				<div class="mobile-donate-container">
+					<a class="nav-donate" href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=R9567VZSE29ES">DONATE</a>
+					<button class="menu-toggle-open" aria-controls="primary-menu"><div></div><div></div><div></div></button>
+				</div>
 				<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
 			</nav><!-- #site-navigation -->
+
+			<nav class="mobile-navigation" role="navigation">
+					<button class="menu-toggle-close" aria-controls="primary-menu"><div></div><div></div></button>
+				<?php wp_nav_menu( array( 'theme_location' => 'mobile', 'menu_id' => 'mobile-menu' ) ); ?>
+			</nav>
 		</div>
 	</header><!-- #masthead -->
 
