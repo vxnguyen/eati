@@ -41,7 +41,7 @@
 
 			<nav class="main-navigation" role="navigation">
 				<div class="mobile-donate-container">
-					<a class="nav-donate" href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=R9567VZSE29ES">DONATE</a>
+					<a class="nav-donate animated pulse" href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=R9567VZSE29ES">DONATE</a>
 					<button class="menu-toggle-open" aria-controls="primary-menu"><div></div><div></div><div></div></button>
 				</div>
 				<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>

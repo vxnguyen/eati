@@ -1,6 +1,7 @@
 /* Underline from left animation for navigation menu */
 .main-navigation li a,
-.mobile-navigation li a {
+.mobile-navigation li a,
+.tabbed-navigation li span {
   display: inline-block;
   vertical-align: middle;
   transform: perspective(1px) translateZ(0);
@@ -8,8 +9,14 @@
   position: relative;
   overflow: hidden;
 }
+
+.nav-donate a  {
+  transform: none!important;
+}
+
 .main-navigation li a:before,
-.mobile-navigation li a:before {
+.mobile-navigation li a:before,
+.tabbed-navigation li span:before {
   content: "";
   position: absolute;
   z-index: -1;
@@ -27,6 +34,7 @@
 }
 
 .main-navigation li a:hover:before,
+.tabbed-navigation li span:hover:before,
 .mobile-navigation li a:hover:before,
 .main-navigation li a:focus:before,
 .mobile-navigation li a:focus:before,
@@ -130,6 +138,31 @@
     -webkit-transform: none;
     transform: none;
   }
+}
+
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.fadeIn {
+  -webkit-animation-name: fadeIn;
+  animation-name: fadeIn;
 }
 
 .hidden {

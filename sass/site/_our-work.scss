@@ -1,0 +1,137 @@
+// Image drop shadows
+.tabbed-content img {
+	    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
+
+// Background color for navigation and content containers
+.our-work-main {
+	background: linear-gradient(to right, #eee 0%, #eee 50%, #fff 50%, #fff 100%);
+
+	@media screen and (max-width: 930px) {
+		background: #FFFFFF;
+	}
+
+	.our-work-content {
+		position: relative;
+	}
+}
+
+.tabbed-content {
+	background: #FFFFFF;
+	padding: {
+		top: 100px;
+		left: 22%;
+	}
+
+	aside,h3 {
+		font-family: $font__aside;
+		font-weight: 600;
+		@include font-size(1.2);
+		margin: 20px 0;
+	}
+
+	.col {
+		display: flex;
+		align-items: center;
+
+		> div {
+			width: 50%;
+			z-index: 0;
+		}
+
+		> div:first-child {
+			padding-right: 40px;
+		}
+
+		@media screen and (max-width: 1100px) {
+			flex-wrap: wrap;
+
+			> div {
+				width: 100%;
+			}
+		}
+	}
+
+	section {
+		padding-bottom: 60px;
+	}
+
+	@media screen and(max-width: 930px) {
+		padding-left: 0;
+	}
+}
+
+@media screen and (max-width: 1100px) and (min-width: 500px) {
+	.ethiopia-content > div:last-child {
+		display: none;
+	}
+}
+
+.mission-content {
+	.col {
+		align-items: center;
+	}
+
+	ul {
+		margin-left: 20px;
+	}
+
+	aside {
+		background: $color__bg-aside;
+		color: $color__text-aside-inverted;
+		text-align: center;
+		font-weight: 300;
+		@include font-size(1.4);
+		padding: 30px 10px;
+	}
+
+	p {
+		margin-top: 20px;
+	}
+
+	h2 {
+		z-index: 0;
+	}
+}
+
+.program-content {
+		> div:last-child p {
+		margin-top: 20px;
+	}
+
+	@media screen and (max-width: 1100px) {
+		img {
+			display: none;
+		}
+	}
+
+	@media screen and (max-width: 500px) {
+		img:first-child {
+			display: block;
+		}
+	}
+}
+
+.ethiopia-content .brush-bg:after {
+	background: url("images/our-work-brush-1_2x.png") no-repeat;
+	background-size: contain;
+    left: -10px;
+    top: -10px;
+    width: 180px;
+}
+
+.mission-content .brush-bg:after {
+	background: url("images/our-work-brush-2_2x.png") no-repeat;
+	background-size: contain;
+	top: 0;
+	left: 0;
+	width: 180px;
+}
+
+.program-content .brush-bg:after {
+	background: url("images/our-work-brush-3_2x.png") no-repeat;
+	background-size: contain;
+	top: 0;
+	left: 0;
+	width: 180px;
+}

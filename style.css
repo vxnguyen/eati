@@ -35,6 +35,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 	## Masthead
 	## Hero
 	## Front Page
+	## Our Work
 	## Footer
 --------------------------------------------------------------*/
 /*--------------------------------------------------------------
@@ -513,6 +514,45 @@ a {
     height: 2px;
     width: 100%; }
 
+.tabbed-navigation {
+  background: #EEEEEE;
+  text-align: right;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding-left: 20px;
+  padding-top: 100px;
+  padding-right: 40px;
+  width: 20%;
+  height: 100%; }
+  .tabbed-navigation ul {
+    list-style-type: none;
+    font-family: "Josefin Slab", serif;
+    font-size: 28.8px;
+    font-size: 1.8rem; }
+    .tabbed-navigation ul li {
+      padding: 10px 0;
+      cursor: pointer; }
+    .tabbed-navigation ul li:first-child {
+      padding-top: 0; }
+  @media screen and (max-width: 1100px) {
+    .tabbed-navigation {
+      text-align: left; } }
+  @media screen and (max-width: 930px) {
+    .tabbed-navigation {
+      display: none; } }
+
+.tabbed-navigation li .active:after {
+  content: "";
+  position: absolute;
+  z-index: 10;
+  left: 0;
+  right: 100%;
+  bottom: 0;
+  background: #292929;
+  height: 2px;
+  width: 100%; }
+
 /*** Donate Button ***/
 .nav-donate a,
 .mobile-donate-container a {
@@ -644,7 +684,8 @@ a {
 --------------------------------------------------------------*/
 /* Underline from left animation for navigation menu */
 .main-navigation li a,
-.mobile-navigation li a {
+.mobile-navigation li a,
+.tabbed-navigation li span {
   display: inline-block;
   vertical-align: middle;
   transform: perspective(1px) translateZ(0);
@@ -652,8 +693,12 @@ a {
   position: relative;
   overflow: hidden; }
 
+.nav-donate a {
+  transform: none !important; }
+
 .main-navigation li a:before,
-.mobile-navigation li a:before {
+.mobile-navigation li a:before,
+.tabbed-navigation li span:before {
   content: "";
   position: absolute;
   z-index: -1;
@@ -669,6 +714,7 @@ a {
   background: #EEEEEE; }
 
 .main-navigation li a:hover:before,
+.tabbed-navigation li span:hover:before,
 .mobile-navigation li a:hover:before,
 .main-navigation li a:focus:before,
 .mobile-navigation li a:focus:before,
@@ -738,6 +784,20 @@ a {
     opacity: 1;
     -webkit-transform: none;
     transform: none; } }
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
+@keyframes fadeIn {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
+.fadeIn {
+  -webkit-animation-name: fadeIn;
+  animation-name: fadeIn; }
+
 .hidden {
   display: none; }
 
@@ -796,7 +856,9 @@ a {
     left: 0;
     right: 0; }
   .hero .content h1 {
-    font-family: "freight-display-pro", sans-serif; }
+    font-family: "freight-display-pro", sans-serif;
+    color: #EEEEEE;
+    padding-top: 100px; }
   .hero .content p {
     font-size: 20.8px;
     font-size: 1.3rem; }
@@ -804,7 +866,9 @@ a {
     text-align: center;
     max-width: 600px;
     margin: 0 auto;
-    padding-top: 80px; }
+    padding-top: 50px; }
+    .hero .content-home h1 {
+      color: #292929; }
 
 /*--------------------------------------------------------------
 ## Front Page
@@ -824,7 +888,6 @@ a {
       font-size: 3.8rem;
       margin-bottom: 20px; }
   .about .brush-bg:after {
-    position: absolute;
     background: url("images/eati-brush_2x.png") no-repeat;
     background-size: contain;
     left: -11px;
@@ -935,6 +998,99 @@ a {
     .sponsor-message .brush-bg:after {
       width: 300px;
       left: 0; } }
+
+/*--------------------------------------------------------------
+## Our Work Page
+--------------------------------------------------------------*/
+.tabbed-content img {
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23); }
+
+.our-work-main {
+  background: linear-gradient(to right, #eee 0%, #eee 50%, #fff 50%, #fff 100%); }
+  @media screen and (max-width: 930px) {
+    .our-work-main {
+      background: #FFFFFF; } }
+  .our-work-main .our-work-content {
+    position: relative; }
+
+.tabbed-content {
+  background: #FFFFFF;
+  padding-top: 100px;
+  padding-left: 22%; }
+  .tabbed-content aside, .tabbed-content h3 {
+    font-family: "freight-sans-pro", sans-serif;
+    font-weight: 600;
+    font-size: 19.2px;
+    font-size: 1.2rem;
+    margin: 20px 0; }
+  .tabbed-content .col {
+    display: flex;
+    align-items: center; }
+    .tabbed-content .col > div {
+      width: 50%;
+      z-index: 0; }
+    .tabbed-content .col > div:first-child {
+      padding-right: 40px; }
+    @media screen and (max-width: 1100px) {
+      .tabbed-content .col {
+        flex-wrap: wrap; }
+        .tabbed-content .col > div {
+          width: 100%; } }
+  .tabbed-content section {
+    padding-bottom: 60px; }
+  @media screen and (max-width: 930px) {
+    .tabbed-content {
+      padding-left: 0; } }
+
+@media screen and (max-width: 1100px) and (min-width: 500px) {
+  .ethiopia-content > div:last-child {
+    display: none; } }
+.mission-content .col {
+  align-items: center; }
+.mission-content ul {
+  margin-left: 20px; }
+.mission-content aside {
+  background: #292929;
+  color: #EEEEEE;
+  text-align: center;
+  font-weight: 300;
+  font-size: 22.4px;
+  font-size: 1.4rem;
+  padding: 30px 10px; }
+.mission-content p {
+  margin-top: 20px; }
+.mission-content h2 {
+  z-index: 0; }
+
+.program-content > div:last-child p {
+  margin-top: 20px; }
+@media screen and (max-width: 1100px) {
+  .program-content img {
+    display: none; } }
+@media screen and (max-width: 500px) {
+  .program-content img:first-child {
+    display: block; } }
+
+.ethiopia-content .brush-bg:after {
+  background: url("images/our-work-brush-1_2x.png") no-repeat;
+  background-size: contain;
+  left: -10px;
+  top: -10px;
+  width: 180px; }
+
+.mission-content .brush-bg:after {
+  background: url("images/our-work-brush-2_2x.png") no-repeat;
+  background-size: contain;
+  top: 0;
+  left: 0;
+  width: 180px; }
+
+.program-content .brush-bg:after {
+  background: url("images/our-work-brush-3_2x.png") no-repeat;
+  background-size: contain;
+  top: 0;
+  left: 0;
+  width: 180px; }
 
 /*--------------------------------------------------------------
 ## Footer
