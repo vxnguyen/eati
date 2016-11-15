@@ -117,6 +117,8 @@ add_filter( 'upload_mimes', 'cc_mime_types' );
 function eati_scripts() {
 	wp_enqueue_style( 'eati-style', get_stylesheet_uri() );
 
+	wp_enqueue_script( 'eati-carousel', get_template_directory_uri() . '/js/carousel.js', array( 'jquery' ), '20161115', true );
+
 	wp_enqueue_script( 'eati-navigation', get_template_directory_uri() . '/js/navigation.js', array( 'jquery' ), '20161109', true );
 
 	wp_enqueue_script( 'eati-modernizr', get_template_directory_uri() . '/js/modernizr.js', array(), '20161101', true );

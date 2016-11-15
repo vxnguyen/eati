@@ -71,31 +71,20 @@
 }
 
 .donate-message-banner {
+	background: url("images/donate-message-banner.jpg") center bottom / cover no-repeat;
 	position: relative;
 	height: 440px;
-
-	> img {
-		object-fit: cover;
-		height: 100%;
-	}
 
 	.inner {
 		padding: {
 			top: 60px;
 			bottom: 60px;
 		}
-		position: absolute;
-		margin-left: auto;
-		margin-right: auto;
-		top: 0;
-		left: 0;
-		right: 0;
-		height: 100%;
 	}
 
 	p {
 		font-family: $font__display;
-		color: $color__text-donate-message;
+		color: $color__text-secondary;
 		@include font-size(1.5);
 	}
 

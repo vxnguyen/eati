@@ -1,14 +1,4 @@
 a {
-	color: $color__link;
-
-	&:visited {
-		color: $color__link-visited;
-	}
-	&:hover,
-	&:focus,
-	&:active {
-		color: $color__link-hover;
-	}
 	&:focus {
 		outline: thin dotted;
 	}
@@ -21,31 +11,19 @@ a {
 .link-button {
 	text-decoration: none;
 	font-family: $font__link-button;
-	background-color: $color__bg-link-button;
-	color: $color__text-link-button;
+	background-color: $color__button-bg;
+	color: $color__button-text;
 	padding: 8px 10px 5px 10px;
 	@include font-size(1.2);
 	box-shadow: 0 1px 3px rgba(0,0,0,0.12),0 1px 2px rgba(0,0,0,0.24);
     transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 
 	&:visited {
-		color: $color__text-link-button;
+		color: $color__button-text;
 	}
 
 	&:hover {
 		box-shadow: 0 14px 28px rgba(0,0,0,0.25),0 10px 10px rgba(0,0,0,0.22);
-		color: $color__text-link-button;
-	}
-}
-
-.site-footer a {
-	color: $color__text-footer;
-
-	&:visited {
-		color: $color__text-footer;
-	}
-
-	&:hover {
-		
+		color: $color__button-text;
 	}
 }

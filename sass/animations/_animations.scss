@@ -23,14 +23,14 @@
   left: 0;
   right: 100%;
   bottom: 0;
-  background: $color__text-nav;
+  background: $color__text-main;
   height: 2px;
   transition-duration: 0.3s;
   transition-timing-function: ease-out;
 }
 
 .mobile-navigation li a:before {
-  background: $color__text-mobile-nav;
+  background: $color__nav-secondary;
 }
 
 .main-navigation li a:hover:before,

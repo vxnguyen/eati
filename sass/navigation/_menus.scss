@@ -20,7 +20,7 @@
 
 	a {
 		text-decoration: none;
-		color: $color__text-nav;
+		color: $color__link-main;
 	}
 
 	.current_page_item > a:after,
@@ -33,7 +33,7 @@
 		left: 0;
 		right: 100%;
 		bottom: 0;
-		background: $color__text-nav;
+		background: $color__link-main;
 		height: 2px;
 		width: 100%;
 	}
@@ -85,7 +85,7 @@
 	left: 0;
 	right: 100%;
 	bottom: 0;
-	background: $color__text-nav;
+	background: $color__text-main;
 	height: 2px;
 	width: 100%;	
 }
@@ -93,9 +93,9 @@
 /*** Donate Button ***/
 .nav-donate a,
 .mobile-donate-container a {
-	background-color: $color__bg-donate-button;
+	background-color: $color__donate-button-bg-main;
 	padding: 9px 10px 5px 10px;
- 	color: $color__text-donate-button;
+ 	color: $color__donate-button-main;
  	font-family: $font__heading;
 }
 
@@ -120,7 +120,7 @@
     opacity: 0;
 
 	a {
-		color: $color__text-mobile-nav;
+		color: $color__nav-secondary;
 	}
 
 	ul {
@@ -137,9 +137,9 @@
 
 	/*** Mobile Menu Donate Button ***/
 	.nav-donate a {
-		background-color: $color__bg-donate-button-inverted;
+		background-color: $color__donate-button-bg-secondary;
 		padding: 9px 10px 5px 10px;
-	 	color: $color__text-donate-button-inverted;
+	 	color: $color__donate-button-secondary;
 	 	font-family: $font__heading;
 	}
 

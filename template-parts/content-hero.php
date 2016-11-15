@@ -10,7 +10,6 @@
 ?>
 
 <section class="hero">
-	<?php echo wp_get_attachment_image( get_field('hero-image'), 'full', '', array( "class" => "objectfit-img" )); ?>
 	<div class="inner">
 		<?php if ( is_front_page() ) : ?>
 			<div class="content content-home">

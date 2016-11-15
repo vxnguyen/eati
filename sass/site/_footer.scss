@@ -1,6 +1,6 @@
 .site-footer {
 	@include font-size(.9);
-	background-color: $color__bg-footer;
+	background-color: $color__bg-secondary;
 	padding: {
 		top: 60px;
 		bottom: 60px;
@@ -15,7 +15,15 @@
 	p {
 		margin: 0;
 		@include font-size(1);
-		color: $color__text-footer;
+		color: $color__text-secondary;
+	}
+
+	a {
+		color: $color__text-secondary;
+
+		&:visited {
+			color: $color__text-secondary;
+		}
 	}
 
 	.inner {

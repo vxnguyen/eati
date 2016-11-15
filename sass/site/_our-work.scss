@@ -77,8 +77,8 @@
 	}
 
 	aside {
-		background: $color__bg-aside;
-		color: $color__text-aside-inverted;
+		background: $color__bg-secondary;
+		color: $color__text-secondary;
 		text-align: center;
 		font-weight: 300;
 		@include font-size(1.4);
@@ -118,6 +118,14 @@
     left: -10px;
     top: -10px;
     width: 180px;
+
+    @media screen and (max-width: 900px) {
+		width: 160px;
+	}
+
+	@media screen and (max-width: 700px) {
+		width: 140px;
+	}
 }
 
 .mission-content .brush-bg:after {
@@ -125,7 +133,15 @@
 	background-size: contain;
 	top: 0;
 	left: 0;
-	width: 180px;
+	width: 160px;
+
+	@media screen and (max-width: 900px) {
+		width: 140px;
+	}
+
+	@media screen and (max-width: 700px) {
+		width: 110px;
+	}
 }
 
 .program-content .brush-bg:after {
@@ -134,4 +150,12 @@
 	top: 0;
 	left: 0;
 	width: 180px;
+
+	@media screen and (max-width: 900px) {
+		width: 160px;
+	}
+
+	@media screen and (max-width: 700px) {
+		width: 120px;
+	}
 }

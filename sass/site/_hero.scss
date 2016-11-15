@@ -1,25 +1,26 @@
+.front-page-main .hero {
+	// Non-retina screens
+	background: url("images/home-banner.jpg") center bottom / cover no-repeat;
+}
+
+.our-work-main .hero {
+	background: url("images/our-work-banner.jpg") center bottom / cover no-repeat;
+}
+
+.success-main .hero {
+	background: url("images/success-banner.jpg") center bottom / cover no-repeat;
+}
+
 .hero {
 	height: 700px;
-	position: relative;
-
-	> img {
-		object-fit: cover;
-		height: 100%;
-	}
 
 	.inner {
-		padding-top: 90px;
-		position: absolute;
-		margin-left: auto;
-		margin-right: auto;
-		top: 0;
-		left: 0;
-		right: 0;
+		padding-top: 70px;
 	}
 
 	.content h1 {
 		font-family: $font__site-title;
-		color: $color__text-heading-inverted;
+		color: $color__heading-secondary;
 		padding-top: 100px;
 	}
 

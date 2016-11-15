@@ -28,15 +28,19 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 # Elements
 # Layout
 # Navigation
-	## Links
 	## Menus
 # Accessibility
+# Carousel
 # Animations
 # Content
+	## Links
 	## Masthead
 	## Hero
+	## No-Hero Header
 	## Front Page
 	## Our Work
+	## Our Team
+	## Success
 	## Footer
 --------------------------------------------------------------*/
 @import "variables-site/variables-site";
@@ -71,6 +75,11 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 # Accessibility
 --------------------------------------------------------------*/
 @import "modules/accessibility";
+
+/*--------------------------------------------------------------
+# Carousel
+--------------------------------------------------------------*/
+@import "modules/carousel";
 
 /*--------------------------------------------------------------
 # Animations
