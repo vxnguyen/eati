@@ -9,7 +9,7 @@ module.exports = function(grunt) {
           cwd: './',
           src: 'style.css',
           dest: './',
-          ext:'.min.css'
+          ext:'.css'
         }]
       }
     },
@@ -22,7 +22,7 @@ module.exports = function(grunt) {
       },
       dist: {
         src: './style.css',
-        dest: './style.post.css'
+        dest: './style.css'
       }
     }
 

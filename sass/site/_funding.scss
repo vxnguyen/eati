@@ -1,0 +1,115 @@
+.funding-main img {
+	box-shadow: 0 3px 6px rgba(0,0,0,0.16),0 3px 6px rgba(0,0,0,0.23);
+}
+
+.fund-allocation {
+	padding: {
+		top: 60px;
+		bottom: 60px;
+	}
+
+	.brush-bg {
+		background: url('images/fund-allocation-brush_2x.png') no-repeat;
+		background-size: contain;
+		width: 450px;
+
+		@media screen and (max-width: 900px) {
+			width: 380px;
+		}
+
+		@media screen and (max-width: 700px) {
+			max-width: 300px;
+		}
+	}
+
+	> div {
+		display: flex;
+		align-items: center;
+		margin-left: -40px;
+
+		> div {
+			width: 50%;
+			margin-left: 40px;
+		}
+
+		ul {
+			margin: {
+				left: 40px;
+				bottom: 20px;
+			}
+		}
+
+		@media screen and (max-width: 850px) {
+			display: block;
+			margin-left: 0;
+
+			> div {
+				width: 100%;
+				margin-left: 0;
+			}
+		}
+	}
+}
+
+.sources {
+	padding: {
+		top: 60px;
+		bottom: 60px;
+	}
+
+	.brush-bg {
+		background: url('images/sources-brush_2x.png') no-repeat;
+		background-size: contain;
+		width: 200px;
+
+		@media screen and (max-width: 900px) {
+			width: 180px;
+		}
+
+		@media screen and (max-width: 700px) {
+			max-width: 140px;
+		}	
+	}
+
+	.footnote {
+		@include font-size(.9);
+	}
+}
+
+.fundraisers-donations {
+	padding: {
+		top: 60px;
+		bottom: 60px;
+	}
+
+	.brush-bg {
+		background: url('images/fundraisers-donations-brush_2x.png') no-repeat;
+		background-size: contain;
+		max-width: 600px;
+	}
+
+	> div {
+		display: flex;
+		margin-left: -40px;
+
+		> div {
+			margin-left: 40px;
+
+			ul {
+				margin: {
+					left: 40px;
+					bottom: 20px;
+				}
+			}
+		}
+
+		> div:first-child {
+			width: 40%;
+
+			@media screen and (max-width: 850px) {
+				display: none;
+				width: 0;
+			}
+		}
+	}
+}

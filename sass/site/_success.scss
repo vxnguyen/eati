@@ -156,7 +156,6 @@
 	}
 
 .testimonials {
-	padding-top: 60px;
 	margin-bottom: 150px;
 	text-align: center;
 
@@ -167,23 +166,4 @@
 	@media screen and (max-width: 600px) {
 		display: none;
 	}
-}
-
-.carousel-inner .item {
-	padding: 0 170px;
-	height: 180px;
-
-	@media screen and (max-width: 1100px) {
-		height: 230px;
-	}
-
-	@media screen and (max-width: 800px) {
-		height: 330px;
-		padding: 0 100px;
-	}
-
-	@media screen and (max-width: 800px) {
-		height: 420px;
-	}
-
 }

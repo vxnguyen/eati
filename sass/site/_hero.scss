@@ -1,5 +1,4 @@
 .front-page-main .hero {
-	// Non-retina screens
 	background: url("images/home-banner.jpg") center bottom / cover no-repeat;
 }
 
@@ -9,6 +8,10 @@
 
 .success-main .hero {
 	background: url("images/success-banner.jpg") center bottom / cover no-repeat;
+}
+
+.funding-main .hero {
+	background: url("images/funding-banner.jpg") center bottom / cover no-repeat;
 }
 
 .hero {
