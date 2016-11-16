@@ -1,5 +1,4 @@
-p {
-	margin-bottom: 1.5em;
+body {
     @include font-size(1.1);
     /* equivalent to 16px */
     line-height: 1.25;
@@ -7,10 +6,14 @@ p {
 }
 
 @media (min-width: 43.75em) {
-  p {
+  body {
     @include font-size(1.1);
     /* equivalent to 16px */
     line-height: 1.375;
     /* equivalent to 22px */
   }
+}
+
+p {
+    margin-bottom: 1.5em;
 }

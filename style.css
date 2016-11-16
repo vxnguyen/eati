@@ -316,8 +316,7 @@ h4 {
   h4 {
     line-height: 1.22222222;
     /* (22px / 18px */ } }
-p {
-  margin-bottom: 1.5em;
+body {
   font-size: 17.6px;
   font-size: 1.1rem;
   /* equivalent to 16px */
@@ -325,12 +324,15 @@ p {
   /* equivalent to 20px */ }
 
 @media (min-width: 43.75em) {
-  p {
+  body {
     font-size: 17.6px;
     font-size: 1.1rem;
     /* equivalent to 16px */
     line-height: 1.375;
     /* equivalent to 22px */ } }
+p {
+  margin-bottom: 1.5em; }
+
 /*--------------------------------------------------------------
 # Elements
 --------------------------------------------------------------*/
