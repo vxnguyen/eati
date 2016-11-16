@@ -2213,6 +2213,8 @@ a:hover, a:active {
 .our-team-single-header .primary-titles {
   font-weight: 600;
   margin-bottom: 20px; }
+.our-team-single-header .secondary-titles {
+  font-weight: 300; }
 
 .our-team-secondary-title {
   font-family: "freight-sans-pro", sans-serif;
