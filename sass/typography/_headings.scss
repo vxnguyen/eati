@@ -1,4 +1,4 @@
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3, h4 {
 	clear: both;
 	font-family: $font__heading;
 	font-weight: 300;
@@ -77,7 +77,7 @@ h3 {
 h4 {
   font-family: $font__main;
   font-weight: 600;
-  font-size: 1.125em;
+  @include font-size(1.125);
   /* 1.125x body copy size = 18px */
   line-height: 1.11111111;
 }

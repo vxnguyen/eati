@@ -18,28 +18,30 @@
 	height: 700px;
 
 	.inner {
-		padding-top: 70px;
+		padding-top: 170px;
 	}
+}
 
-	.content h1 {
+	.hero__title {
 		font-family: $font__site-title;
 		color: $color__heading-secondary;
-		padding-top: 100px;
 	}
 
-	.content p {
+	.hero__content p {
 		@include font-size(1.3);
 	}
 
 	// Front page specific styles
-	.content-home {
+	.hero__content-home {
 		text-align: center;
 		max-width: 600px;
-		margin: 0 auto;
-		padding-top: 50px;
+		margin: 50px auto 0 auto;
 
 		h1 {
+			margin-bottom: 10px;
+		}
+
+		.hero__title {
 			color: $color__text-main;
 		}
 	}
-}
