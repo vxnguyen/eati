@@ -26,13 +26,13 @@ get_header(); ?>
 				</div>
 			</section>
 
-			<section class="donate-message-banner">
+			<aside class="donate-message-banner">
 				<?php echo wp_get_attachment_image( get_field('donate-message-banner'), 'full', '', array( "class" => "objectfit-img" )); ?>
 				<div class="inner">
 					<div class="top-line animated"><p><?php the_field('top-line'); ?></p></div>
 					<div class="bottom-line animated"><p><?php the_field('bottom-line'); ?></p></div>
 				</div>
-			</section>
+			</aside>
 
 			<section class="sponsor-message inner">
 				<div>
