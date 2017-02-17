@@ -90,6 +90,7 @@ get_header(); ?>
 								<li>Kristin Burkart</li>
 								<li>Ralph Binder</li>
 								<li>Wilson Quezada</li>
+								<li>Asqual Getaneh </li>
 							</ul>
 
 							<h4>Emory University Medical Center</h4>
@@ -133,8 +134,6 @@ get_header(); ?>
 							<ul>
 								<li>William Rom</li>
 								<li>Joseph Huang</li>
-								<li>David Steiger</li>
-								<li>Linda Rogers</li>
 								<li>Versha Taparia</li>
 								<li>Kevin Felner</li>
 							</ul>
@@ -148,18 +147,28 @@ get_header(); ?>
 							<ul>
 								<li>Dagne Assefa</li>
 							</ul>
+
+							<h4>Lenox Hill Hospital</h4>
+							<ul>
+								<li>Steven Feinsilver</li>
+							</ul>
+
+							<h4>New York Methodist Hospital</h4>
+							<ul>
+								<li>Liziamma George</li>
+							</ul>
 						</div>
 						<div>
 							<h4>Mount Sinai School of Medicine</h4>
 							<ul>
 								<li>Dua Sakshi</li>
-								<li>Steven Feinsilver</li>
+								<li>David Steiger</li>
+								<li>Linda Rogers </li>
 							</ul>
 
 							<h4>Long Island Jewish Medical Center</h4>
 							<ul>
 								<li>Adey Tsegaye</li>
-								<li>Liziamma George</li>
 								<li>Viera Lakticova</li>
 								<li>Rubin Cohen</li>
 							</ul>
