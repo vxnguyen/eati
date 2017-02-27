@@ -1996,6 +1996,8 @@ a:hover, a:active {
     width: 170px; }
   .sponsor-message .swiss-lung-logo {
     width: 80px; }
+  .sponsor-message .chest-foundation-logo {
+    width: 55px; }
   @media screen and (max-width: 950px) {
     .sponsor-message > div:first-child {
       display: none; }

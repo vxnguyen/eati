@@ -47,6 +47,7 @@ get_header(); ?>
 						<div class="sponsor-logos">
 							<div class="vital-strategies-logo"><?php echo wp_get_attachment_image( get_field('sponsor-logo-1'), 'full'); ?></div>
 							<div class="swiss-lung-logo"><?php echo wp_get_attachment_image( get_field('sponsor-logo-2'), 'full'); ?></div>
+							<div class="chest-foundation-logo"><?php echo wp_get_attachment_image( get_field('sponsor-logo-3'), 'full'); ?></div>
 						</div>
 					</div>
 				</div>
